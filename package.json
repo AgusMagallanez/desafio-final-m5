@@ -1,0 +1,13 @@
+{
+  "name": "desafio-final",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.15",
+    "parcel": "^2.8.0"
+  },
+  "scripts": {
+    "dev": "parcel serve ./src/index.html",
+    "build": "parcel build ./src/index.html"
+  }
+}
