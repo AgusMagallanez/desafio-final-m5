@@ -13,6 +13,7 @@ export function initHome(params) {
   style.innerHTML = `
     .img-title{
       width:300px;
+      height: 200px;
     }
   `;
   const button = div.querySelector(".button-el") as any;

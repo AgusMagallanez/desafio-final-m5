@@ -3,46 +3,47 @@ import { initInstructions } from "./pages/instructions";
 import { initGame } from "./pages/game";
 import { initResults } from "./pages/results";
 
-// const basePath = "/piedra-papel-tijera";
-
 const routes = [
   {
     path: /\/home/,
     component: initHome,
   },
-  {
-    path: /\/instructions/,
-    component: initInstructions,
-  },
-  {
-    path: /\/game/,
-    component: initGame,
-  },
-  {
-    path: /\/results/,
-    component: initResults,
-  },
 ];
 
-// console.log(routes);
+const BASE_PATH = "/desafio-final-m5";
+
+function isGitHubPages() {
+  return location.host.includes("github.io");
+}
 
 export function initRouter(container: Element) {
   function goTo(path) {
+    const completePath = isGitHubPages() ? BASE_PATH + path : path;
     history.pushState({}, "", path);
-    handleRoute(path);
+    handleRoute(completePath);
   }
+
   function handleRoute(route) {
+    const newRoute = isGitHubPages() ? route.replace(BASE_PATH, "") : route;
+
     for (const r of routes) {
-      if (r.path.test(route)) {
-        const el: any = r.component({ goTo: goTo });
+      if (r.path.test(newRoute)) {
+        const elemento = r.component({ goTo: goTo });
+
         if (container.firstChild) {
           container.firstChild.remove();
         }
-        container.appendChild(el);
+        container.appendChild(elemento);
       }
     }
   }
-  window.onpopstate = function () {
+
+  if (location.pathname == "/" || location.host.includes("github.io")) {
+    goTo("/home");
+  } else {
+    handleRoute(location.pathname);
+  }
+  window.onpopstate = () => {
     handleRoute(location.pathname);
   };
 }
