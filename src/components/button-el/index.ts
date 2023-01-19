@@ -10,17 +10,20 @@ customElements.define(
     render() {
       const button = document.createElement("button");
       const style = document.createElement("style");
-      button.className = "button-el";
+      button.className = "button-comenzar";
 
       style.innerHTML = `
-                    .button-el {
-                        color: #FFF;
-                        width:300px;
-                        height:90px;
-                        border: solid 10px 
-                        border-radius:10px;
-                    }
-                    `;
+        .button-comenzar{
+          background-color: #006CFC;
+          border:10px solid #001997;
+          border-radius:10px;
+          width:322px;
+          height:87px;
+          font-family:"Odibee Sans";
+          font-size:45px;
+          color: #D8FCFC;
+        }
+      `;
 
       button.textContent = this.textContent;
       this.shadow.appendChild(button);
