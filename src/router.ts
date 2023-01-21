@@ -8,6 +8,10 @@ const routes = [
     path: /\/home/,
     component: initHome,
   },
+  {
+    path: /\/instructions/,
+    component: initInstructions,
+  },
 ];
 
 const BASE_PATH = "/desafio-final-m5";
