@@ -1,4 +1,3 @@
-//Acá falta importar los componentes por ej: "import {./components/button-el}"
 import "./components/button-el";
 import "./components/hand-rock-el";
 import "./components/hand-paper-el";

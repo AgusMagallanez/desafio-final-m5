@@ -19,12 +19,6 @@ customElements.define(
             width:100%;
             height:100%;
           }
-          @media(min-width:768px){
-            .rock{
-              width:120%;
-              height:120%;
-            }
-        }
       `;
       this.shadow.appendChild(style);
     }

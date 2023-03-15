@@ -12,6 +12,14 @@ const routes = [
     path: /\/instructions/,
     component: initInstructions,
   },
+  {
+    path: /\/game/,
+    component: initGame,
+  },
+  {
+    path: /\/results/,
+    component: initResults,
+  },
 ];
 
 const BASE_PATH = "/desafio-final-m5";
@@ -32,7 +40,7 @@ export function initRouter(container: Element) {
 
     for (const r of routes) {
       if (r.path.test(newRoute)) {
-        const elemento = r.component({ goTo: goTo });
+        const elemento: any = r.component({ goTo: goTo });
 
         if (container.firstChild) {
           container.firstChild.remove();
