@@ -14,9 +14,10 @@ export function initResults(params) {
   const computerScore = currentState.historyScore.computer;
 
   div.innerHTML = `  
-    <img class="tie-img" src="${tieStar}">
-    <img class="win-img" src="${winStar}">
-    <img class="loose-img" src="${looseStar}">
+    <div class="container">
+      <img class="tie-img" src="${tieStar}">
+      <img class="win-img" src="${winStar}">
+      <img class="loose-img" src="${looseStar}">
 
     <div class="score-board">
       <h2 class="score-board-title">Score</h2>
@@ -28,7 +29,7 @@ export function initResults(params) {
       <button-el class ="button-play">Volver a jugar</button-el>
       <button-el class ="button-restart">Reiniciar Puntajes</button-el>
     </div>
-
+    </div>
   `;
 
   style.innerHTML = `
@@ -36,6 +37,18 @@ export function initResults(params) {
       display:flex;
       flex-direction:column;
       align-items:center;
+      justify-content:center;
+      height:100vh;
+      width:100%;      
+    }
+
+    .container{
+      height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .tie-img{
@@ -71,7 +84,6 @@ export function initResults(params) {
       margin:0;
       text-align:center;
       font-size:55px;
-
     }
 
     .player-score , .computer-score{
@@ -86,10 +98,10 @@ export function initResults(params) {
       gap: 10px;
       margin:10px;
     }
-
   `;
 
   const result = currentState.historyScore.result;
+  const container = div.querySelector(".container") as HTMLElement;
   const tieImg = div.querySelector(".tie-img") as HTMLElement;
   const winImg = div.querySelector(".win-img") as HTMLElement;
   const looseImg = div.querySelector(".loose-img") as HTMLElement;
@@ -98,8 +110,10 @@ export function initResults(params) {
     tieImg.style.display = "flex";
   } else if (result == "win") {
     winImg.style.display = "flex";
+    container.style.backgroundColor = "var(--background-win-style)";
   } else if (result == "loose") {
     looseImg.style.display = "flex";
+    container.style.backgroundColor = "var(--background-loose-style)";
   }
 
   const buttonPlay = div.querySelector(".button-play") as any;

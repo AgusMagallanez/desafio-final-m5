@@ -9,9 +9,9 @@ export function initHome(params) {
       <img src="${imgTitle}" class="img-title">
         <button-el class ="button-start">Comenzar</button-el>
           <div class="hands-container">
-            <hand-rock-el></hand-rock-el>  
-            <hand-paper-el></hand-paper-el>
-            <hand-scissors-el></hand-scissors-el>
+            <hand-rock-el class="hand-rock"></hand-rock-el>  
+            <hand-paper-el class="hand-paper"></hand-paper-el>
+            <hand-scissors-el class="hand-scissors"></hand-scissors-el>
           </div>
     `;
 
@@ -46,6 +46,12 @@ export function initHome(params) {
           margin-bottom:20px;
       }
     }
+
+    @media(min-width: 768px){
+      .hand-paper, .hand-rock, .hand-scissors{
+      flex-grow:0.05;
+      }
+  } 
   `;
   const button = div.querySelector(".button-start") as any;
   button.addEventListener("click", () => {

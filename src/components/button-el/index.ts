@@ -14,14 +14,14 @@ customElements.define(
 
       style.innerHTML = `
         .button-comenzar{
-          background-color: #006CFC;
+          background-color: var(--background-button);
           border:10px solid #001997;
           border-radius:10px;
           width:322px;
           height:87px;
           font-family:"Odibee Sans";
           font-size:45px;
-          color: #D8FCFC;
+          color: var(--color-button);
         }
       `;
 

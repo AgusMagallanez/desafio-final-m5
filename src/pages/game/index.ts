@@ -56,6 +56,11 @@ export function initGame(params) {
         font-family: "Odibee Sans";
         font-size: 100px;
     }
+    @media(min-width: 768px){
+      .counterEl{
+        font-size:150px;
+      }
+    }
 
     .player-hands-container{
         display:flex;
@@ -63,24 +68,29 @@ export function initGame(params) {
         width: 100%;
         margin-bottom:10px;
     }
+    @media(min-width: 768px){
+      .player-paper-hand, .player-rock-hand, .player-scissors-hand{
+        flex-grow:0.05;
+      }
+    }              
 
     .disabled{
         display:none;
     }
-    
+
     .enabled{ 
         display:block;
         visibility:visible;
         opacity:100%;
         transition: all 0.6s;
-        flex-grow: 0.05;
-        margin-bottom:30px;
+        flex-grow: 0.06;
+        margin-bottom:100px;
     }
     
     .computer-selection{
         display:flex;
         visibility:visible;
-        margin-top: 30px;
+        margin-top: 100px;
         flex-grow: 0.05;
         transition: all 0.6s;
     }

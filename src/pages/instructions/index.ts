@@ -9,9 +9,9 @@ export function initInstructions(params) {
         <img src="${imgInstructions}" class="img-instructions">
             <button-el class ="button-play">¡Jugar!</button-el>
                 <div class="hands-container">
-                    <hand-rock-el></hand-rock-el>  
-                    <hand-paper-el></hand-paper-el>
-                    <hand-scissors-el></hand-scissors-el>
+                    <hand-rock-el class="rock-hand"></hand-rock-el>  
+                    <hand-paper-el class="paper-hand"></hand-paper-el>
+                    <hand-scissors-el class="scissors-hand"></hand-scissors-el>
                 </div>
 
     `;
@@ -48,6 +48,12 @@ export function initInstructions(params) {
                 margin-bottom:20px;
             }
         }
+        
+        @media(min-width: 768px){
+            .paper-hand, .rock-hand, .scissors-hand{
+            flex-grow:0.05;
+            }
+        } 
     `;
 
   const button = div.querySelector(".button-play") as any;

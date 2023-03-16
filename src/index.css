@@ -1,8 +1,16 @@
-*{
-    box-sizing: border-box;
+:root {
+  --background-button: #006cfc;
+  --color-button: #d8fcfc;
+
+  --background-loose-style: rgb(220, 91, 73, 60%);
+  --background-win-style: rgb(108, 180, 108, 60%);
 }
 
-body{
-    background: url(./assets/fondo.svg);
+* {
+  box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  background: url(./assets/fondo.svg);
+}

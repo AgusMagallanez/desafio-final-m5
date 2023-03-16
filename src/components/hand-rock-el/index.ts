@@ -15,10 +15,10 @@ customElements.define(
       `;
 
       style.innerHTML = `
-          .rock{
-            width:100%;
-            height:100%;
-          }
+        .rock{
+          width:100%;
+          height:100%;
+        }
       `;
       this.shadow.appendChild(style);
     }
